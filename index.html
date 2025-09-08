@@ -78,7 +78,7 @@
         <a href="#services" class="hover:text-brand-600">Services</a>
         <a href="#process" class="hover:text-brand-600">Process</a>
         <a href="#about" class="hover:text-brand-600">About</a>
-        <a href="#contact" className="hover:text-brand-600">Contact</a>
+        <a href="#contact" class="hover:text-brand-600">Contact</a> <!-- fixed className -->
       </nav>
       <a href="#contact" class="hidden sm:inline-flex">
         <button class="btn-primary rounded-2xl px-4 py-2 shadow-soft">Free consult</button>
@@ -156,7 +156,7 @@
               </div>
               <div>
                 <p class="font-medium">Weekly cadence</p>
-                <p class="text-sm text-slate-600">Metrics that keep you moving forward.</p>
+                <p class="text-sm text-slate-600">Metrics that keep the search moving forward.</p>
               </div>
             </div>
           </div>
@@ -272,17 +272,35 @@
   <section id="contact" class="py-16 sm:py-20 bg-white">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <!-- Contact info + headshot -->
         <div>
           <h2 class="text-3xl font-bold tracking-tight">Book a free consult</h2>
           <p class="text-slate-700 mt-3 max-w-xl">
             Tell me a bit about your goals. I will reply with times and a short checklist so we can make the most of the call.
           </p>
-          <div class="mt-6 space-y-2 text-sm text-slate-700">
-            <div class="flex items-center gap-2"><i data-lucide="mail" class="w-4 h-4 text-brand-600"></i> hello@imageintegrity.co (placeholder)</div>
-            <div class="flex items-center gap-2"><i data-lucide="phone" class="w-4 h-4 text-brand-600"></i> (555) 555-5555</div>
+
+          <div class="mt-6 space-y-3 text-sm text-slate-700">
+            <div class="flex items-center gap-2">
+              <i data-lucide="mail" class="w-4 h-4 text-brand-600"></i>
+              <a href="mailto:robert.rogers@imageintegritysolutions.com" class="hover:underline">
+                robert.rogers@imageintegritysolutions.com
+              </a>
+            </div>
+            <div class="flex items-center gap-2">
+              <i data-lucide="phone" class="w-4 h-4 text-brand-600"></i>
+              <a href="tel:16124040137" class="hover:underline">
+                (612) 404-0137
+              </a>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <img src="images/RR2025.PNG" alt="Robert Rogers - Image Integrity Solutions"
+                 class="rounded-2xl shadow-lg w-64 border">
           </div>
         </div>
 
+        <!-- Contact form -->
         <div class="card p-6">
           <form onsubmit="event.preventDefault();" class="grid gap-4">
             <div class="grid gap-2">
