@@ -47,6 +47,7 @@
 
   <style>
     html { scroll-behavior: smooth; }
+    /* Vibrant gradient hero background */
     .hero-bg {
       background:
         radial-gradient(65rem 65rem at 85% 10%, rgba(34,211,238,.18), transparent 60%),
@@ -57,7 +58,7 @@
     .chip { background: rgba(99,102,241,.12); color:#3730a3; }
     .btn-primary { background:#6366f1; color:#fff; }
     .btn-primary:hover { filter: brightness(1.05); }
-    .icon-pill { background:#111827; }
+    .icon-pill { background:#111827; } /* dark pill behind icons */
     .accent-ring { box-shadow: 0 0 0 6px rgba(99,102,241,.08); }
     .brand-border { border-color: rgba(99,102,241,.25); }
   </style>
@@ -122,21 +123,150 @@
         <div class="card p-6 shadow-card accent-ring">
           <h3 class="text-xl font-semibold px-1">A clean plan for your next move</h3>
           <div class="grid gap-4 sm:grid-cols-2 mt-4">
-            <!-- hero cards unchanged -->
+            <div class="flex items-start gap-3 rounded-2xl border brand-border p-4 bg-white/90 hover:bg-brand-50 transition">
+              <div class="h-10 w-10 rounded-xl icon-pill grid place-items-center shrink-0">
+                <i data-lucide="briefcase" class="text-white w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="font-medium">Brand refresh</p>
+                <p class="text-sm text-slate-600">Resume, LinkedIn, and a clear value proposition.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 rounded-2xl border brand-border p-4 bg-white/90 hover:bg-brand-50 transition">
+              <div class="h-10 w-10 rounded-xl icon-pill grid place-items-center shrink-0">
+                <i data-lucide="target" class="text-white w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="font-medium">Targeting</p>
+                <p class="text-sm text-slate-600">Role, industry, and scope that fit your strengths.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 rounded-2xl border brand-border p-4 bg-white/90 hover:bg-brand-50 transition">
+              <div class="h-10 w-10 rounded-xl icon-pill grid place-items-center shrink-0">
+                <i data-lucide="users" class="text-white w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="font-medium">Outreach system</p>
+                <p class="text-sm text-slate-600">Scripts and trackers to grow real conversations.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3 rounded-2xl border brand-border p-4 bg-white/90 hover:bg-brand-50 transition">
+              <div class="h-10 w-10 rounded-xl icon-pill grid place-items-center shrink-0">
+                <i data-lucide="gauge" class="text-white w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="font-medium">Weekly cadence</p>
+                <p class="text-sm text-slate-600">Metrics that keep you moving forward.</p>
+              </div>
+            </div>
           </div>
         </div>
+
       </div>  
     </div>
   </section>
 
   <!-- SERVICES -->
-  <!-- ... unchanged ... -->
+  <section id="services" class="py-16 sm:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mb-10 flex items-end justify-between">
+        <h2 class="text-3xl font-bold tracking-tight">Services</h2>
+        <p class="text-slate-600 max-w-2xl text-sm">
+          Start simple. Choose one service, or bundle for a start-to-offer plan.
+        </p>
+      </div>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="card p-6 hover:shadow-card transition">
+          <h3 class="text-lg font-semibold flex items-center gap-2">
+            <i data-lucide="briefcase" class="w-4 h-4 text-brand-600"></i> Resume + LinkedIn
+          </h3>
+          <p class="text-slate-700 mt-2">Modern, tailored materials that match the roles you want.</p>
+        </div>
+        <div class="card p-6 hover:shadow-card transition">
+          <h3 class="text-lg font-semibold flex items-center gap-2">
+            <i data-lucide="briefcase" class="w-4 h-4 text-brand-600"></i> Interview Prep
+          </h3>
+          <p class="text-slate-700 mt-2">Mock sessions, feedback, and stories that land.</p>
+        </div>
+        <div class="card p-6 hover:shadow-card transition">
+          <h3 class="text-lg font-semibold flex items-center gap-2">
+            <i data-lucide="briefcase" class="w-4 h-4 text-brand-600"></i> Search Strategy
+          </h3>
+          <p class="text-slate-700 mt-2">Weekly plan, KPI dashboard, and outreach scripts.</p>
+        </div>
+        <div class="card p-6 hover:shadow-card transition">
+          <h3 class="text-lg font-semibold flex items-center gap-2">
+            <i data-lucide="briefcase" class="w-4 h-4 text-brand-600"></i> Offer Readiness
+          </h3>
+          <p class="text-slate-700 mt-2">References, negotiation prep, and decision framing.</p>
+        </div>
+        <div class="card p-6 hover:shadow-card transition">
+          <h3 class="text-lg font-semibold flex items-center gap-2">
+            <i data-lucide="briefcase" class="w-4 h-4 text-brand-600"></i> Executive Package
+          </h3>
+          <p class="text-slate-700 mt-2">End-to-end guidance with hands-on support.</p>
+        </div>
+        <div class="card p-6 hover:shadow-card transition">
+          <h3 class="text-lg font-semibold flex items-center gap-2">
+            <i data-lucide="briefcase" class="w-4 h-4 text-brand-600"></i> Custom Projects
+          </h3>
+          <p class="text-slate-700 mt-2">Tell me what you need and we will build it.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- PROCESS -->
-  <!-- ... unchanged ... -->
+  <section id="process" class="py-16 sm:py-20 bg-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold tracking-tight mb-10">Simple process</h2>
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="relative card p-6">
+          <div class="absolute -top-3 -left-3 h-10 w-10 rounded-2xl bg-brand-600 text-white grid place-items-center font-semibold shadow">1</div>
+          <h3 class="mt-4 text-lg font-semibold">Quick consult</h3>
+          <p class="text-slate-700 mt-2">We clarify goals, constraints, and timing.</p>
+        </div>
+        <div class="relative card p-6">
+          <div class="absolute -top-3 -left-3 h-10 w-10 rounded-2xl bg-brand-600 text-white grid place-items-center font-semibold shadow">2</div>
+          <h3 class="mt-4 text-lg font-semibold">Plan + materials</h3>
+          <p class="text-slate-700 mt-2">You get a clear plan with refreshed assets.</p>
+        </div>
+        <div class="relative card p-6">
+          <div class="absolute -top-3 -left-3 h-10 w-10 rounded-2xl bg-brand-600 text-white grid place-items-center font-semibold shadow">3</div>
+          <h3 class="mt-4 text-lg font-semibold">Weekly execution</h3>
+          <p class="text-slate-700 mt-2">We track outreach and iterate with feedback.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ABOUT -->
-  <!-- ... unchanged ... -->
+  <section id="about" class="py-16 sm:py-20">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-10 items-start">
+      <div class="lg:col-span-2 space-y-4">
+        <h2 class="text-3xl font-bold tracking-tight">About Image Integrity Solutions</h2>
+        <p class="text-slate-700 text-lg">
+          I help candidates present a credible story and run a disciplined search. The focus is practical tools, clear messaging, and a steady weekly rhythm that creates momentum.
+        </p>
+        <ul class="grid sm:grid-cols-2 gap-3 text-slate-700">
+          <li class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-brand-600"></i> Pragmatic guidance that respects your time</li>
+          <li class="flex items-center gap-2"><i data-lucide="users" class="w-4 h-4 text-brand-600"></i> Communication that builds real relationships</li>
+          <li class="flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-brand-600"></i> Focus on the right roles and companies</li>
+          <li class="flex items-center gap-2"><i data-lucide="gauge" class="w-4 h-4 text-brand-600"></i> Metrics that keep the search on track</li>
+        </ul>
+      </div>
+      <div class="card p-6">
+        <h3 class="font-semibold">Quick facts</h3>
+        <div class="space-y-3 text-sm text-slate-700 mt-3">
+          <div class="flex items-center justify-between gap-6"><span class="text-slate-500">What I do</span><span class="font-medium">Career transition support and strategy</span></div>
+          <div class="flex items-center justify-between gap-6"><span class="text-slate-500">Ideal clients</span><span class="font-medium">Leaders and operators pursuing their next step</span></div>
+          <div class="flex items-center justify-between gap-6"><span class="text-slate-500">Format</span><span class="font-medium">1:1 sessions, async reviews, weekly cadence</span></div>
+          <div class="flex items-center justify-between gap-6"><span class="text-slate-500">Where</span><span class="font-medium">Remote or Twin Cities</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- CONTACT -->
   <section id="contact" class="py-16 sm:py-20 bg-white">
@@ -161,13 +291,30 @@
               </a>
             </div>
           </div>
+
           <div class="mt-8">
             <img src="images/RR2025.png" alt="Robert Rogers - Image Integrity Solutions LLC"
                  class="rounded-2xl shadow-lg w-64 border">
           </div>
         </div>
 
-        <!-- contact form unchanged -->
+        <div class="card p-6">
+          <form onsubmit="event.preventDefault();" class="grid gap-4">
+            <div class="grid gap-2">
+              <label class="text-sm font-medium">Name</label>
+              <input class="border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-400" placeholder="Your name" required>
+            </div>
+            <div class="grid gap-2">
+              <label class="text-sm font-medium">Email</label>
+              <input type="email" class="border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-400" placeholder="you@example.com" required>
+            </div>
+            <div class="grid gap-2">
+              <label class="text-sm font-medium">What is your goal?</label>
+              <textarea rows="4" class="border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-400" placeholder="Share a few lines about your target role or challenges"></textarea>
+            </div>
+            <button type="submit" class="btn-primary rounded-2xl px-4 py-2">Send</button>
+          </form>
+        </div>
       </div>
     </div>
   </section>
