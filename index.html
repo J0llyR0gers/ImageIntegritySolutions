@@ -1,262 +1,106 @@
-import React from "react";  
-import { motion } from "framer-motion";    
-import { ArrowRight, Briefcase, GaugeCircle, Target, Users, ShieldCheck, Sparkles, Mail, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea"; 
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Image Integrity Solutions</title>
 
-// Barebones, modern landing page for Image Integrity Solutions
-// One-file React component. Uses Tailwind, shadcn/ui, lucide-react, and framer-motion.
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-export default function ImageIntegritySolutions() {
-  return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900">
-      {/* Nav */}
-      <header className="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/70 bg-white/60 border-b">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="h-9 w-9 rounded-xl bg-slate-900 grid place-items-center shadow-md">
-              <Sparkles className="h-5 w-5 text-white" />
-            </div>
-            <span className="font-semibold tracking-tight">Image Integrity Solutions</span>
-          </div>
-          <nav className="hidden md:flex items-center gap-8 text-sm">
-            <a href="#services" className="hover:opacity-80">Services</a>
-            <a href="#process" className="hover:opacity-80">Process</a>
-            <a href="#about" className="hover:opacity-80">About</a>
-            <a href="#contact" className="hover:opacity-80">Contact</a>
-          </nav>
-          <div className="flex items-center gap-3">
+  <!-- Lucide icons (CDN) -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    /* soft gradient glow background */
+    .bg-glow:before {
+      content: "";
+      position: absolute; inset: -10% -10% auto -10%;
+      height: 42rem; width: 42rem; margin: auto; left: 50%; transform: translateX(-50%);
+      filter: blur(64px);
+      border-radius: 9999px;
+      background: linear-gradient(45deg, rgb(15 23 42), rgb(71 85 105), rgb(79 70 229));
+      opacity: .35;
+      mask-image: radial-gradient(60% 60% at 50% 40%, black, transparent);
+      -webkit-mask-image: radial-gradient(60% 60% at 50% 40%, black, transparent);
+      z-index: -1;
+    }
+    .card { border: 1px solid rgb(226 232 240); border-radius: 1.5rem; background: white; box-shadow: 0 8px 24px rgba(2,6,23,.06); }
+    .chip { background-color: rgb(15 23 42 / .08); }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50 text-slate-900 antialiased">
+  <!-- NAV -->
+  <header class="sticky top-0 z-40 backdrop-blur bg-white/60 border-b">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <div class="h-9 w-9 rounded-xl bg-slate-900 grid place-items-center shadow-md">
+          <i data-lucide="sparkles" class="text-white w-5 h-5"></i>
+        </div>
+        <span class="font-semibold tracking-tight">Image Integrity Solutions</span>
+      </div>
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#services" class="hover:opacity-80">Services</a>
+        <a href="#process" class="hover:opacity-80">Process</a>
+        <a href="#about" class="hover:opacity-80">About</a>
+        <a href="#contact" class="hover:opacity-80">Contact</a>
+      </nav>
+      <a href="#contact" class="inline-flex">
+        <button class="rounded-2xl bg-slate-900 text-white px-4 py-2 shadow-sm">Free consult</button>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden bg-glow">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 pb-20">
+      <div class="grid lg:grid-cols-2 items-center gap-10">
+        <div class="space-y-6">
+          <span class="inline-flex items-center rounded-full chip px-3 py-1 text-xs font-medium tracking-wide">
+            Career Transition Consultant
+          </span>
+          <h1 class="text-4xl sm:text-5xl font-bold leading-tight tracking-tight">
+            Navigate the job market with clarity, confidence, and a plan
+          </h1>
+          <p class="text-slate-600 text-lg max-w-xl">
+            Image Integrity Solutions helps professionals reposition, tell a sharper story, and win interviews.
+            Together we align your brand, materials, and search strategy for measurable progress.
+          </p>
+          <div class="flex flex-wrap gap-3">
             <a href="#contact">
-              <Button className="rounded-2xl shadow-sm">Free consult</Button>
+              <button class="rounded-2xl bg-slate-900 text-white px-6 py-3 shadow-md flex items-center">
+                Book a free consult <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+              </button>
+            </a>
+            <a href="#services">
+              <button class="rounded-2xl border px-6 py-3">Explore services</button>
             </a>
           </div>
+          <div class="flex flex-wrap items-center gap-6 pt-3 text-sm text-slate-600">
+            <div class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4"></i> Pragmatic and honest guidance</div>
+            <div class="flex items-center gap-2"><i data-lucide="gauge" class="w-4 h-4"></i> KPI mindset for your search</div>
+          </div>
         </div>
-      </header>
 
-      {/* Hero */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 -z-10 opacity-40 [mask-image:radial-gradient(60%_60%_at_50%_40%,black,transparent)]">
-          <div className="absolute -top-24 left-1/2 -translate-x-1/2 h-[42rem] w-[42rem] rounded-full bg-gradient-to-tr from-slate-900 via-slate-700 to-indigo-600 blur-3xl" />
-        </div>
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 pb-20">
-          <div className="grid lg:grid-cols-2 items-center gap-10">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="space-y-6"
-            >
-              <span className="inline-flex items-center rounded-full bg-slate-900/10 px-3 py-1 text-xs font-medium tracking-wide">Career Transition Consultant</span>
-              <h1 className="text-4xl sm:text-5xl font-bold leading-tight tracking-tight">
-                Navigate the job market with clarity, confidence, and a plan
-              </h1>
-              <p className="text-slate-600 text-lg max-w-xl">
-                Image Integrity Solutions helps professionals reposition, tell a sharper story, and win interviews.
-                Together we align your brand, materials, and search strategy for measurable progress.
-              </p>
-              <div className="flex flex-wrap gap-3">
-                <a href="#contact">
-                  <Button size="lg" className="rounded-2xl px-6 shadow-md">
-                    Book a free consult <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </a>
-                <a href="#services">
-                  <Button variant="outline" size="lg" className="rounded-2xl">
-                    Explore services
-                  </Button>
-                </a>
+        <div class="card">
+          <div class="px-6 pt-6">
+            <h3 class="text-xl font-semibold">A clean plan for your next move</h3>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2 p-6">
+            <div class="flex items-start gap-3 rounded-2xl border p-4 shadow-sm bg-white/70">
+              <div class="h-9 w-9 rounded-xl bg-slate-900 grid place-items-center shrink-0">
+                <i data-lucide="briefcase" class="text-white w-5 h-5"></i>
               </div>
-              <div className="flex items-center gap-6 pt-3 text-sm text-slate-600">
-                <div className="flex items-center gap-2"><ShieldCheck className="h-4 w-4" /> Pragmatic and honest guidance</div>
-                <div className="flex items-center gap-2"><GaugeCircle className="h-4 w-4" /> KPI mindset for your search</div>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-            >
-              <Card className="rounded-3xl shadow-xl border-slate-200">
-                <CardHeader>
-                  <CardTitle className="text-xl">A clean plan for your next move</CardTitle>
-                </CardHeader>
-                <CardContent className="grid gap-4 sm:grid-cols-2">
-                  <ListItem icon={Briefcase} title="Brand refresh" text="Resume, LinkedIn, and a clear value proposition." />
-                  <ListItem icon={Target} title="Targeting" text="Role, industry, and scope that fit your strengths." />
-                  <ListItem icon={Users} title="Outreach system" text="Scripts and trackers to grow real conversations." />
-                  <ListItem icon={GaugeCircle} title="Weekly cadence" text="Metrics that keep you moving forward." />
-                </CardContent>
-              </Card>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Services */}
-      <section id="services" className="py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mb-10 flex items-end justify-between">
-            <h2 className="text-3xl font-bold tracking-tight">Services</h2>
-            <p className="text-slate-600 max-w-2xl text-sm">
-              Start simple. Choose one service, or bundle for a start-to-offer plan.
-            </p>
-          </div>
-
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            <ServiceCard title="Resume + LinkedIn" desc="Modern, tailored materials that match the roles you want." />
-            <ServiceCard title="Interview Prep" desc="Mock sessions, feedback, and stories that land." />
-            <ServiceCard title="Search Strategy" desc="Weekly plan, KPI dashboard, and outreach scripts." />
-            <ServiceCard title="Offer Readiness" desc="References, negotiation prep, and decision framing." />
-            <ServiceCard title="Executive Package" desc="End-to-end guidance with hands-on support." />
-            <ServiceCard title="Custom Projects" desc="Tell me what you need and we will build it." />
-          </div>
-        </div>
-      </section>
-
-      {/* Process */}
-      <section id="process" className="py-16 sm:py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold tracking-tight mb-10">Simple process</h2>
-          <div className="grid gap-5 md:grid-cols-3">
-            <Step num="1" title="Quick consult" text="We clarify goals, constraints, and timing." />
-            <Step num="2" title="Plan + materials" text="You get a clear plan with refreshed assets." />
-            <Step num="3" title="Weekly execution" text="We track outreach and iterate with feedback." />
-          </div>
-        </div>
-      </section>
-
-      {/* About */}
-      <section id="about" className="py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-10 items-start">
-          <div className="lg:col-span-2 space-y-4">
-            <h2 className="text-3xl font-bold tracking-tight">About Image Integrity Solutions</h2>
-            <p className="text-slate-700 text-lg">
-              I help candidates present a credible story and run a disciplined search. The focus is practical tools, clear messaging, and a steady weekly rhythm that creates momentum.
-            </p>
-            <ul className="grid sm:grid-cols-2 gap-3 text-slate-700">
-              <li className="flex items-center gap-2"><ShieldCheck className="h-4 w-4" /> Pragmatic guidance that respects your time</li>
-              <li className="flex items-center gap-2"><Users className="h-4 w-4" /> Communication that builds real relationships</li>
-              <li className="flex items-center gap-2"><Target className="h-4 w-4" /> Focus on the right roles and companies</li>
-              <li className="flex items-center gap-2"><GaugeCircle className="h-4 w-4" /> Metrics that keep the search on track</li>
-            </ul>
-          </div>
-          <Card className="rounded-3xl shadow-xl border-slate-200">
-            <CardHeader>
-              <CardTitle>Quick facts</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-3 text-sm text-slate-700">
-              <Item label="What I do" value="Career transition support and strategy" />
-              <Item label="Ideal clients" value="Leaders and operators pursuing their next step" />
-              <Item label="Format" value="1:1 sessions, async reviews, weekly cadence" />
-              <Item label="Where" value="Remote or Twin Cities" />
-            </CardContent>
-          </Card>
-        </div>
-      </section>
-
-      {/* Contact */}
-      <section id="contact" className="py-16 sm:py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-10 items-start">
-            <div>
-              <h2 className="text-3xl font-bold tracking-tight">Book a free consult</h2>
-              <p className="text-slate-700 mt-3 max-w-xl">
-                Tell me a bit about your goals. I will reply with times and a short checklist so we can make the most of the call.
-              </p>
-              <div className="mt-6 space-y-2 text-sm text-slate-700">
-                <div className="flex items-center gap-2"><Mail className="h-4 w-4" /> hello@imageintegrity.co (placeholder)</div>
-                <div className="flex items-center gap-2"><Phone className="h-4 w-4" /> (555) 555-5555</div>
+              <div>
+                <p class="font-medium">Brand refresh</p>
+                <p class="text-sm text-slate-600">Resume, LinkedIn, and a clear value proposition.</p>
               </div>
             </div>
-
-            <Card className="rounded-3xl shadow-xl border-slate-200">
-              <CardContent className="p-6">
-                <form onSubmit={(e) => e.preventDefault()} className="grid gap-4">
-                  <div className="grid gap-2">
-                    <label className="text-sm font-medium">Name</label>
-                    <Input placeholder="Your name" required />
-                  </div>
-                  <div className="grid gap-2">
-                    <label className="text-sm font-medium">Email</label>
-                    <Input type="email" placeholder="you@example.com" required />
-                  </div>
-                  <div className="grid gap-2">
-                    <label className="text-sm font-medium">What is your goal?</label>
-                    <Textarea placeholder="Share a few lines about your target role or challenges" rows={4} />
-                  </div>
-                  <Button type="submit" className="rounded-2xl">Send</Button>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-sm text-slate-600">
-          <div className="flex items-center gap-2">
-            <div className="h-7 w-7 rounded-xl bg-slate-900 grid place-items-center shadow">
-              <Sparkles className="h-4 w-4 text-white" />
-            </div>
-            <span>Image Integrity Solutions</span>
-          </div>
-          <p className="opacity-80">© {new Date().getFullYear()} Image Integrity Solutions. All rights reserved.</p>
-        </div>
-      </footer>
-    </div>
-  );
-}
-
-function ListItem({ icon: Icon, title, text }: { icon: any; title: string; text: string }) {
-  return (
-    <div className="flex items-start gap-3 rounded-2xl border p-4 shadow-sm bg-white/70">
-      <div className="h-9 w-9 rounded-xl bg-slate-900 grid place-items-center shrink-0">
-        <Icon className="h-5 w-5 text-white" />
-      </div>
-      <div>
-        <p className="font-medium">{title}</p>
-        <p className="text-sm text-slate-600">{text}</p>
-      </div>
-    </div>
-  );
-}
-
-function ServiceCard({ title, desc }: { title: string; desc: string }) {
-  return (
-    <Card className="rounded-3xl border-slate-200 shadow-lg">
-      <CardHeader>
-        <CardTitle className="flex items-center gap-2 text-lg">
-          <Briefcase className="h-4 w-4" /> {title}
-        </CardTitle>
-      </CardHeader>
-      <CardContent>
-        <p className="text-slate-700">{desc}</p>
-      </CardContent>
-    </Card>
-  );
-}
-
-function Step({ num, title, text }: { num: string; title: string; text: string }) {
-  return (
-    <div className="relative rounded-3xl border p-6 bg-white shadow">
-      <div className="absolute -top-3 -left-3 h-10 w-10 rounded-2xl bg-slate-900 text-white grid place-items-center font-semibold shadow">
-        {num}
-      </div>
-      <h3 className="mt-4 text-lg font-semibold">{title}</h3>
-      <p className="text-slate-700 mt-2">{text}</p>
-    </div>
-  );
-}
-
-function Item({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="flex items-center justify-between gap-6">
-      <span className="text-slate-500">{label}</span>
-      <span className="font-medium">{value}</span>
-    </div>
-  );
-}
+            <div class="flex items-start gap-3 rounded-2xl border p-4 shadow-sm bg-white/70">
+              <div class="h-9 w-9 rounded-xl bg-slate-900 grid place-items-center shrink-0">
+                <i data-lucide="target" class="text-white w-5 h-5"></i>
+              </div>
+              <div>
+                <p class="font-medium">Targeting</p>
+                <p class="text-sm tex
