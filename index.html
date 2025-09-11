@@ -247,7 +247,7 @@
       <div class="lg:col-span-2 space-y-4">
         <h2 class="text-3xl font-bold tracking-tight">About Image Integrity Solutions</h2>
         <p class="text-slate-700 text-lg">
-          I help candidates present a credible story and run a disciplined search. The focus is practical tools, clear messaging, and a steady weekly rhythm that creates momentum.
+          I’m <strong>Rob Rogers</strong>, and I help candidates present a credible story and run a disciplined search. The focus is practical tools, clear messaging, and a steady weekly rhythm that creates momentum.
         </p>
         <ul class="grid sm:grid-cols-2 gap-3 text-slate-700">
           <li class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-brand-600"></i> Pragmatic guidance that respects your time</li>
@@ -256,14 +256,26 @@
           <li class="flex items-center gap-2"><i data-lucide="gauge" class="w-4 h-4 text-brand-600"></i> Metrics that keep the search on track</li>
         </ul>
       </div>
+
+      <!-- Quick facts (clean two-column grid) -->
       <div class="card p-6">
-        <h3 class="font-semibold">Quick facts</h3>
-        <div class="space-y-3 text-sm text-slate-700 mt-3">
-          <div class="flex items-center justify-between gap-6"><span class="text-slate-500">What I do</span><span class="font-medium">Career transition support and strategy</span></div>
-          <div class="flex items-center justify-between gap-6"><span class="text-slate-500">Ideal clients</span><span class="font-medium">Leaders and operators pursuing their next step</span></div>
-          <div class="flex items-center justify-between gap-6"><span class="text-slate-500">Format</span><span class="font-medium">1:1 sessions, async reviews, weekly cadence</span></div>
-          <div class="flex items-center justify-between gap-6"><span class="text-slate-500">Where</span><span class="font-medium">Remote or Twin Cities</span></div>
-        </div>
+        <h3 class="font-semibold mb-4">Quick facts</h3>
+        <dl class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 text-sm text-slate-700">
+          <dt class="text-slate-500">Who I am</dt>
+          <dd class="font-medium">Rob Rogers — Career Transition Consultant</dd>
+
+          <dt class="text-slate-500">What I do</dt>
+          <dd class="font-medium">Career transition support and strategy</dd>
+
+          <dt class="text-slate-500">Ideal clients</dt>
+          <dd class="font-medium">Leaders and operators pursuing their next step</dd>
+
+          <dt class="text-slate-500">Format</dt>
+          <dd class="font-medium">1:1 sessions, async reviews, weekly cadence</dd>
+
+          <dt class="text-slate-500">Where</dt>
+          <dd class="font-medium">Remote or Twin Cities</dd>
+        </dl>
       </div>
     </div>
   </section>
@@ -301,7 +313,7 @@
         <!-- FORM: Formspree -->
         <div class="card p-6">
           <form id="contact-form" class="grid gap-4"
-                action="https://formspree.io/f/xrbajjpd" method="POST" novalidate>
+                action="https://formspree.io/f/xrb3jpdj" method="POST" novalidate>
 
             <!-- Spam honeypot -->
             <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off">
@@ -376,7 +388,9 @@
           note.textContent = 'Thanks! Your message has been sent.';
           note.className = 'text-green-700 text-sm mt-2';
         } else {
-          note.textContent = 'Hmm, something went wrong. Please email robert.rogers@imageintegritysolutions.com.';
+          const data = await res.json().catch(() => ({}));
+          const msg = (data && data.error) || (data && data.errors && data.errors[0] && data.errors[0].message);
+          note.textContent = msg || 'Hmm, something went wrong. Please email robert.rogers@imageintegritysolutions.com.';
           note.className = 'text-red-700 text-sm mt-2';
         }
       } catch {
