@@ -3,401 +3,286 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Image Integrity Solutions LLC</title>
-
-  <!-- Inter font -->
+  <title>ETH Wallet Trade Score Analyzer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Tailwind (CDN) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter','ui-sans-serif','system-ui'] },
-          colors: {
-            brand: {
-              50:  '#eef2ff',
-              100: '#e0e7ff',
-              200: '#c7d2fe',
-              300: '#a5b4fc',
-              400: '#818cf8',
-              500: '#6366f1',
-              600: '#4f46e5',
-              700: '#4338ca',
-              800: '#3730a3',
-              900: '#312e81'
-            },
-            mint: '#22d3ee',
-            peach: '#fb7185'
-          },
-          boxShadow: {
-            card: '0 14px 40px rgba(2,6,23,.10)',
-            soft: '0 10px 28px rgba(2,6,23,.08)'
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Lucide icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
-
   <style>
-    html { scroll-behavior: smooth; }
-    /* Vibrant gradient hero background */
-    .hero-bg {
+    body { font-family: Inter, ui-sans-serif, system-ui; }
+    .hero {
       background:
-        radial-gradient(65rem 65rem at 85% 10%, rgba(34,211,238,.18), transparent 60%),
-        radial-gradient(55rem 55rem at 10% 30%, rgba(251,113,133,.16), transparent 60%),
-        linear-gradient(to bottom, #f8fafc, #ffffff 40%, #f8fafc);
+        radial-gradient(60rem 60rem at 90% 0%, rgba(56,189,248,.15), transparent 65%),
+        radial-gradient(45rem 45rem at 10% 20%, rgba(167,139,250,.14), transparent 60%),
+        linear-gradient(180deg, #0f172a, #111827 40%, #0f172a);
     }
-    .card { background:#fff; border:1px solid rgb(229,231,235); border-radius:1.25rem; box-shadow: var(--tw-shadow,0 0 #0000), 0 12px 40px rgba(2,6,23,.06); }
-    .chip { background: rgba(99,102,241,.12); color:#3730a3; }
-    .btn-primary { background:#6366f1; color:#fff; }
-    .btn-primary:hover { filter: brightness(1.05); }
-    .icon-pill { background:#111827; } /* dark pill behind icons */
-    .accent-ring { box-shadow: 0 0 0 6px rgba(99,102,241,.08); }
-    .brand-border { border-color: rgba(99,102,241,.25); }
   </style>
 </head>
-<body class="bg-slate-50 text-slate-900 font-sans antialiased">
-
-  <!-- NAV -->
-  <header class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2">
-        <div class="h-9 w-9 rounded-xl bg-brand-700 grid place-items-center shadow">
-          <i data-lucide="sparkles" class="text-white w-5 h-5"></i>
-        </div>
-        <span class="font-semibold tracking-tight">Image Integrity Solutions</span>
-      </a>
-      <nav class="hidden md:flex items-center gap-8 text-sm">
-        <a href="#services" class="hover:text-brand-600">Services</a>
-        <a href="#process" class="hover:text-brand-600">Process</a>
-        <a href="#about" class="hover:text-brand-600">About</a>
-        <a href="#contact" class="hover:text-brand-600">Contact</a>
-      </nav>
-      <a href="#contact" class="hidden sm:inline-flex">
-        <button class="btn-primary rounded-2xl px-4 py-2 shadow-soft">Free consult</button>
-      </a>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <section class="relative overflow-hidden hero-bg">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-14 pb-20">
-      <div class="grid lg:grid-cols-2 items-center gap-10">
-        <div class="space-y-6">
-          <span class="inline-flex items-center rounded-full chip px-3 py-1 text-xs font-semibold tracking-wide">
-            Career Transition Consultant
-          </span>
-          <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight tracking-tight">
-            Navigate the job market with clarity, confidence, and a plan
-          </h1>
-          <p class="text-slate-700 text-lg max-w-xl">
-            Image Integrity Solutions helps professionals reposition, tell a sharper story, and win interviews.
-            Together we align your brand, materials, and search strategy for measurable progress.
-          </p>
-          <div class="flex flex-wrap gap-3">
-            <a href="#contact">
-              <button class="btn-primary rounded-2xl px-6 py-3 shadow-soft flex items-center">
-                Book a free consult
-                <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-              </button>
-            </a>
-            <a href="#services">
-              <button class="rounded-2xl border brand-border px-6 py-3 hover:bg-brand-50">
-                Explore services
-              </button>
-            </a>
-          </div>
-          <div class="flex flex-wrap items-center gap-6 pt-2 text-sm text-slate-700">
-            <div class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-brand-600"></i> Pragmatic and honest guidance</div>
-            <div class="flex items-center gap-2"><i data-lucide="gauge" class="w-4 h-4 text-brand-600"></i> KPI mindset for your search</div>
-          </div>
-        </div>
-
-        <div class="card p-6 shadow-card accent-ring">
-          <h3 class="text-xl font-semibold px-1">A clean plan for your next move</h3>
-          <div class="grid gap-4 sm:grid-cols-2 mt-4">
-            <div class="flex items-start gap-3 rounded-2xl border brand-border p-4 bg-white/90 hover:bg-brand-50 transition">
-              <div class="h-10 w-10 rounded-xl icon-pill grid place-items-center shrink-0">
-                <i data-lucide="briefcase" class="text-white w-5 h-5"></i>
-              </div>
-              <div>
-                <p class="font-medium">Brand refresh</p>
-                <p class="text-sm text-slate-600">Resume, LinkedIn, and a clear value proposition.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3 rounded-2xl border brand-border p-4 bg-white/90 hover:bg-brand-50 transition">
-              <div class="h-10 w-10 rounded-xl icon-pill grid place-items-center shrink-0">
-                <i data-lucide="target" class="text-white w-5 h-5"></i>
-              </div>
-              <div>
-                <p class="font-medium">Targeting</p>
-                <p class="text-sm text-slate-600">Role, industry, and scope that fit your strengths.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3 rounded-2xl border brand-border p-4 bg-white/90 hover:bg-brand-50 transition">
-              <div class="h-10 w-10 rounded-xl icon-pill grid place-items-center shrink-0">
-                <i data-lucide="users" class="text-white w-5 h-5"></i>
-              </div>
-              <div>
-                <p class="font-medium">Outreach system</p>
-                <p class="text-sm text-slate-600">Scripts and trackers to grow real conversations.</p>
-              </div>
-            </div>
-            <div class="flex items-start gap-3 rounded-2xl border brand-border p-4 bg-white/90 hover:bg-brand-50 transition">
-              <div class="h-10 w-10 rounded-xl icon-pill grid place-items-center shrink-0">
-                <i data-lucide="gauge" class="text-white w-5 h-5"></i>
-              </div>
-              <div>
-                <p class="font-medium">Weekly cadence</p>
-                <p class="text-sm text-slate-600">Metrics that keep you moving forward.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>  
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+  <section class="hero border-b border-slate-800">
+    <div class="max-w-6xl mx-auto px-4 py-12 md:py-16">
+      <p class="text-sky-300 font-semibold tracking-wide uppercase text-xs">On-chain wallet intelligence</p>
+      <h1 class="text-3xl md:text-5xl font-extrabold mt-2">Ethereum Wallet Trade Activity Analyzer</h1>
+      <p class="text-slate-300 mt-4 max-w-3xl">
+        Analyze Ethereum wallets for the last 30 days of DEX-style trade activity and score each wallet by estimated success vs failure rate.
+      </p>
     </div>
   </section>
 
-  <!-- SERVICES -->
-  <section id="services" class="py-16 sm:py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="mb-10 flex items-end justify-between">
-        <h2 class="text-3xl font-bold tracking-tight">Services</h2>
-        <p class="text-slate-600 max-w-2xl text-sm">
-          Start simple. Choose one service, or bundle for a start-to-offer plan.
-        </p>
+  <main class="max-w-6xl mx-auto px-4 py-8 md:py-10 space-y-8">
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+      <h2 class="text-xl font-bold">Configure Analysis</h2>
+      <p class="text-sm text-slate-400 mt-2">Enter one wallet per line. Uses Etherscan V2 APIs (free key recommended).</p>
+
+      <div class="grid gap-4 md:grid-cols-2 mt-5">
+        <label class="grid gap-2">
+          <span class="text-sm text-slate-300">Etherscan API key</span>
+          <input id="apiKey" class="bg-slate-950 border border-slate-700 rounded-lg px-3 py-2" placeholder="Your Etherscan API key (optional)">
+        </label>
+        <label class="grid gap-2">
+          <span class="text-sm text-slate-300">Days to analyze</span>
+          <input id="days" type="number" min="7" max="90" value="30" class="bg-slate-950 border border-slate-700 rounded-lg px-3 py-2">
+        </label>
       </div>
 
-      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        <div class="card p-6 hover:shadow-card transition">
-          <h3 class="text-lg font-semibold flex items-center gap-2">
-            <i data-lucide="briefcase" class="w-4 h-4 text-brand-600"></i> Resume + LinkedIn
-          </h3>
-          <p class="text-slate-700 mt-2">Modern, tailored materials that match the roles you want.</p>
-        </div>
-        <div class="card p-6 hover:shadow-card transition">
-          <h3 class="text-lg font-semibold flex items-center gap-2">
-            <i data-lucide="briefcase" class="w-4 h-4 text-brand-600"></i> Interview Prep
-          </h3>
-          <p class="text-slate-700 mt-2">Mock sessions, feedback, and stories that land.</p>
-        </div>
-        <div class="card p-6 hover:shadow-card transition">
-          <h3 class="text-lg font-semibold flex items-center gap-2">
-            <i data-lucide="briefcase" class="w-4 h-4 text-brand-600"></i> Search Strategy
-          </h3>
-          <p class="text-slate-700 mt-2">Weekly plan, KPI dashboard, and outreach scripts.</p>
-        </div>
-        <div class="card p-6 hover:shadow-card transition">
-          <h3 class="text-lg font-semibold flex items-center gap-2">
-            <i data-lucide="briefcase" class="w-4 h-4 text-brand-600"></i> Offer Readiness
-          </h3>
-          <p class="text-slate-700 mt-2">References, negotiation prep, and decision framing.</p>
-        </div>
-        <div class="card p-6 hover:shadow-card transition">
-          <h3 class="text-lg font-semibold flex items-center gap-2">
-            <i data-lucide="briefcase" class="w-4 h-4 text-brand-600"></i> Executive Package
-          </h3>
-          <p class="text-slate-700 mt-2">End-to-end guidance with hands-on support.</p>
-        </div>
-        <div class="card p-6 hover:shadow-card transition">
-          <h3 class="text-lg font-semibold flex items-center gap-2">
-            <i data-lucide="briefcase" class="w-4 h-4 text-brand-600"></i> Custom Projects
-          </h3>
-          <p class="text-slate-700 mt-2">Tell me what you need and we will build it.</p>
-        </div>
+      <label class="grid gap-2 mt-4">
+        <span class="text-sm text-slate-300">Wallet addresses</span>
+        <textarea id="wallets" rows="6" class="bg-slate-950 border border-slate-700 rounded-lg px-3 py-2" placeholder="0x...\n0x..."></textarea>
+      </label>
+
+      <div class="flex flex-wrap gap-3 mt-5">
+        <button id="analyzeBtn" class="bg-sky-500 hover:bg-sky-400 text-slate-900 font-semibold rounded-lg px-5 py-2.5">Analyze wallets</button>
+        <button id="demoBtn" class="bg-violet-500 hover:bg-violet-400 text-slate-950 font-semibold rounded-lg px-5 py-2.5">Load demo wallets</button>
       </div>
-    </div>
-  </section>
+      <p id="status" class="text-sm text-slate-400 mt-3"></p>
+    </section>
 
-  <!-- PROCESS -->
-  <section id="process" class="py-16 sm:py-20 bg-white">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold tracking-tight mb-10">Simple process</h2>
-      <div class="grid gap-6 md:grid-cols-3">
-        <div class="relative card p-6">
-          <div class="absolute -top-3 -left-3 h-10 w-10 rounded-2xl bg-brand-600 text-white grid place-items-center font-semibold shadow">1</div>
-          <h3 class="mt-4 text-lg font-semibold">Quick consult</h3>
-          <p class="text-slate-700 mt-2">We clarify goals, constraints, and timing.</p>
-        </div>
-        <div class="relative card p-6">
-          <div class="absolute -top-3 -left-3 h-10 w-10 rounded-2xl bg-brand-600 text-white grid place-items-center font-semibold shadow">2</div>
-          <h3 class="mt-4 text-lg font-semibold">Plan + materials</h3>
-          <p class="text-slate-700 mt-2">You get a clear plan with refreshed assets.</p>
-        </div>
-        <div class="relative card p-6">
-          <div class="absolute -top-3 -left-3 h-10 w-10 rounded-2xl bg-brand-600 text-white grid place-items-center font-semibold shadow">3</div>
-          <h3 class="mt-4 text-lg font-semibold">Weekly execution</h3>
-          <p class="text-slate-700 mt-2">We track outreach and iterate with feedback.</p>
-        </div>
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+      <div class="flex items-center justify-between gap-3">
+        <h2 class="text-xl font-bold">Scoreboard</h2>
+        <span class="text-xs text-slate-400">Success = positive net ETH on trade txs (heuristic)</span>
       </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="py-16 sm:py-20">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid lg:grid-cols-3 gap-10 items-start">
-      <div class="lg:col-span-2 space-y-4">
-        <h2 class="text-3xl font-bold tracking-tight">About Image Integrity Solutions</h2>
-        <p class="text-slate-700 text-lg">
-          I’m <strong>Rob Rogers</strong>, and I help candidates present a credible story and run a disciplined search. The focus is practical tools, clear messaging, and a steady weekly rhythm that creates momentum.
-        </p>
-        <ul class="grid sm:grid-cols-2 gap-3 text-slate-700">
-          <li class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-brand-600"></i> Pragmatic guidance that respects your time</li>
-          <li class="flex items-center gap-2"><i data-lucide="users" class="w-4 h-4 text-brand-600"></i> Communication that builds real relationships</li>
-          <li class="flex items-center gap-2"><i data-lucide="target" class="w-4 h-4 text-brand-600"></i> Focus on the right roles and companies</li>
-          <li class="flex items-center gap-2"><i data-lucide="gauge" class="w-4 h-4 text-brand-600"></i> Metrics that keep the search on track</li>
-        </ul>
+      <div class="overflow-x-auto mt-4">
+        <table class="min-w-full text-sm">
+          <thead class="text-slate-300 border-b border-slate-700">
+            <tr>
+              <th class="text-left py-2 pr-4">Wallet</th>
+              <th class="text-right py-2 px-2">Trades</th>
+              <th class="text-right py-2 px-2">Wins</th>
+              <th class="text-right py-2 px-2">Losses</th>
+              <th class="text-right py-2 px-2">Success %</th>
+              <th class="text-right py-2 px-2">Net ETH</th>
+              <th class="text-right py-2 pl-4">Score / 100</th>
+            </tr>
+          </thead>
+          <tbody id="results" class="divide-y divide-slate-800"></tbody>
+        </table>
       </div>
+    </section>
 
-      <!-- Quick facts (clean two-column grid) -->
-      <div class="card p-6">
-        <h3 class="font-semibold mb-4">Quick facts</h3>
-        <dl class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 text-sm text-slate-700">
-          <dt class="text-slate-500">Who I am</dt>
-          <dd class="font-medium">Rob Rogers — Career Transition Consultant</dd>
-
-          <dt class="text-slate-500">What I do</dt>
-          <dd class="font-medium">Career transition support and strategy</dd>
-
-          <dt class="text-slate-500">Ideal clients</dt>
-          <dd class="font-medium">Leaders and operators pursuing their next step</dd>
-
-          <dt class="text-slate-500">Format</dt>
-          <dd class="font-medium">1:1 sessions, async reviews, weekly cadence</dd>
-
-          <dt class="text-slate-500">Where</dt>
-          <dd class="font-medium">Remote or Twin Cities</dd>
-        </dl>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="py-16 sm:py-20 bg-white">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <div class="grid lg:grid-cols-2 gap-10 items-start">
-        <div>
-          <h2 class="text-3xl font-bold tracking-tight">Book a free consult</h2>
-          <p class="text-slate-700 mt-3 max-w-xl">
-            Tell me a bit about your goals. I will reply with times and a short checklist so we can make the most of the call.
-          </p>
-          <div class="mt-6 space-y-3 text-sm text-slate-700">
-            <div class="flex items-center gap-2">
-              <i data-lucide="mail" class="w-4 h-4 text-brand-600"></i>
-              <a href="mailto:robert.rogers@imageintegritysolutions.com" class="hover:underline">
-                robert.rogers@imageintegritysolutions.com
-              </a>
-            </div>
-            <div class="flex items-center gap-2">
-              <i data-lucide="phone" class="w-4 h-4 text-brand-600"></i>
-              <a href="tel:16124040137" class="hover:underline">
-                (612) 404-0137
-              </a>
-            </div>
-          </div>
-
-          <div class="mt-8">
-            <img src="images/RR2025.png" alt="Robert Rogers - Image Integrity Solutions LLC"
-                 class="rounded-2xl shadow-lg w-64 border">
-          </div>
-        </div>
-
-        <!-- FORM: Formspree -->
-        <div class="card p-6">
-          <form id="contact-form" class="grid gap-4"
-                action="https://formspree.io/f/xrb3jpdj" method="POST" novalidate>
-
-            <!-- Spam honeypot -->
-            <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off">
-
-            <div class="grid gap-2">
-              <label for="name" class="text-sm font-medium">Name</label>
-              <input id="name" name="name"
-                     class="border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-400"
-                     placeholder="Your name" required>
-            </div>
-
-            <div class="grid gap-2">
-              <label for="email" class="text-sm font-medium">Email</label>
-              <input id="email" name="email" type="email"
-                     class="border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-400"
-                     placeholder="you@example.com" required>
-            </div>
-
-            <div class="grid gap-2">
-              <label for="message" class="text-sm font-medium">What is your goal?</label>
-              <textarea id="message" name="message" rows="4"
-                        class="border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-brand-400"
-                        placeholder="Share a few lines about your target role or challenges" required></textarea>
-            </div>
-
-            <input type="hidden" name="_subject" value="New inquiry from Image Integrity Solutions website">
-
-            <button type="submit" class="btn-primary rounded-2xl px-4 py-2">Send</button>
-            <p id="form-note" class="hidden text-sm mt-2"></p>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="py-10">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-sm text-slate-600">
-      <div class="flex items-center gap-2">
-        <div class="h-7 w-7 rounded-xl bg-brand-700 grid place-items-center shadow">
-          <i data-lucide="sparkles" class="text-white w-4 h-4"></i>
-        </div>
-        <span>Image Integrity Solutions LLC</span>
-      </div>
-      <p class="opacity-80">© <span id="year"></span> Image Integrity Solutions LLC. All rights reserved.</p>
-    </div>
-  </footer>
+    <section class="bg-slate-900 border border-slate-800 rounded-2xl p-6 text-sm text-slate-300">
+      <h3 class="font-semibold text-slate-100">How scoring works</h3>
+      <ul class="list-disc pl-5 mt-2 space-y-1">
+        <li>Filters transactions to the chosen period (default 30 days).</li>
+        <li>Treats txs to major DEX/router contracts (Uniswap, 1inch, Sushi, etc.) as trade attempts.</li>
+        <li>Computes estimated net ETH for each trade tx: incoming internal ETH - outgoing ETH - gas fee.</li>
+        <li>Win if estimated net ETH &gt; 0, else loss. Score blends success rate and net ETH trend.</li>
+      </ul>
+      <p class="text-xs text-slate-400 mt-3">Note: This is a lightweight heuristic model and not financial advice.</p>
+    </section>
+  </main>
 
   <script>
-    // icons + footer year
-    lucide.createIcons();
-    document.getElementById('year').textContent = new Date().getFullYear();
+    const ETHERSCAN_BASE = 'https://api.etherscan.io/v2/api';
+    const knownDexRouters = new Set([
+      '0x7a250d5630b4cf539739df2c5dacab4c659f2488', // Uniswap V2
+      '0xe592427a0aece92de3edee1f18e0157c05861564', // Uniswap V3
+      '0x1111111254eeb25477b68fb85ed929f73a960582', // 1inch V5
+      '0x111111125421ca6dc452d289314280a0f8842a65', // 1inch V6
+      '0xd9e1ce17f2641f24ae83637ab66a2cca9c378b9f', // Sushi
+      '0xdef1c0ded9bec7f1a1670819833240f027b25eff', // 0x Exchange Proxy
+      '0x881d40237659c251811cec9c364ef91dc08d300c'  // Metamask swap router
+    ]);
 
-    // AJAX submit to Formspree with friendly status
-    const form = document.getElementById('contact-form');
-    const note = document.getElementById('form-note');
+    const swapMethodPrefixes = [
+      '0x38ed1739','0x18cbafe5','0x7ff36ab5','0x8803dbee','0x4a25d94a',
+      '0xfb3bdb41','0x12aa3caf','0x5ae401dc','0x414bf389','0x3593564c'
+    ];
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      note.classList.remove('hidden');
-      note.textContent = 'Sending...';
-      note.className = 'text-slate-600 text-sm mt-2';
+    const el = (id) => document.getElementById(id);
+    const statusEl = el('status');
+    const resultsBody = el('results');
 
-      try {
-        const res = await fetch(form.action, {
-          method: 'POST',
-          body: new FormData(form),
-          headers: { 'Accept': 'application/json' }
-        });
-        if (res.ok) {
-          form.reset();
-          note.textContent = 'Thanks! Your message has been sent.';
-          note.className = 'text-green-700 text-sm mt-2';
-        } else {
-          const data = await res.json().catch(() => ({}));
-          const msg = (data && data.error) || (data && data.errors && data.errors[0] && data.errors[0].message);
-          note.textContent = msg || 'Hmm, something went wrong. Please email robert.rogers@imageintegritysolutions.com.';
-          note.className = 'text-red-700 text-sm mt-2';
-        }
-      } catch {
-        note.textContent = 'Network error. Please email robert.rogers@imageintegritysolutions.com.';
-        note.className = 'text-red-700 text-sm mt-2';
-      }
+    el('demoBtn').addEventListener('click', () => {
+      el('wallets').value = [
+        '0xd8da6bf26964af9d7eed9e03e53415d37aa96045',
+        '0x742d35Cc6634C0532925a3b844Bc454e4438f44e'
+      ].join('\n');
+      statusEl.textContent = 'Demo wallets loaded.';
     });
+
+    el('analyzeBtn').addEventListener('click', async () => {
+      const wallets = el('wallets').value
+        .split(/\s+/)
+        .map(w => w.trim())
+        .filter(Boolean);
+
+      const days = Number(el('days').value || 30);
+      const apiKey = el('apiKey').value.trim() || 'YourApiKeyToken';
+
+      if (!wallets.length) {
+        statusEl.textContent = 'Please enter at least one wallet address.';
+        return;
+      }
+
+      resultsBody.innerHTML = '';
+      statusEl.textContent = `Analyzing ${wallets.length} wallet(s)...`;
+
+      const nowSec = Math.floor(Date.now() / 1000);
+      const sinceSec = nowSec - (days * 24 * 60 * 60);
+
+      const rows = [];
+      for (let i = 0; i < wallets.length; i++) {
+        const wallet = wallets[i];
+        statusEl.textContent = `Analyzing ${wallet} (${i + 1}/${wallets.length})...`;
+        try {
+          const result = await analyzeWallet(wallet, sinceSec, apiKey);
+          rows.push(result);
+        } catch (err) {
+          rows.push({ wallet, error: err.message });
+        }
+      }
+
+      rows.sort((a, b) => (b.score || -1) - (a.score || -1));
+      for (const row of rows) resultsBody.appendChild(buildRow(row));
+
+      statusEl.textContent = `Done. Processed ${rows.length} wallet(s).`;
+    });
+
+    function qs(params) {
+      return new URLSearchParams(params).toString();
+    }
+
+    async function fetchEtherscan(params) {
+      const url = `${ETHERSCAN_BASE}?${qs(params)}`;
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP ${res.status}`);
+      const data = await res.json();
+      if (data.status === '0' && data.message !== 'No transactions found') {
+        throw new Error(data.result || 'API error');
+      }
+      return Array.isArray(data.result) ? data.result : [];
+    }
+
+    async function analyzeWallet(wallet, sinceSec, apiKey) {
+      const [txs, internalTxs] = await Promise.all([
+        fetchEtherscan({ chainid: '1', module: 'account', action: 'txlist', address: wallet, startblock: '0', endblock: '99999999', sort: 'desc', apikey: apiKey }),
+        fetchEtherscan({ chainid: '1', module: 'account', action: 'txlistinternal', address: wallet, startblock: '0', endblock: '99999999', sort: 'desc', apikey: apiKey })
+      ]);
+
+      const recent = txs.filter(tx => Number(tx.timeStamp) >= sinceSec);
+      const recentInternal = internalTxs.filter(tx => Number(tx.timeStamp) >= sinceSec);
+      const internalByHash = recentInternal.reduce((map, tx) => {
+        (map[tx.hash] ||= []).push(tx);
+        return map;
+      }, {});
+
+      const trades = recent.filter(tx => isPotentialTrade(wallet, tx));
+
+      let wins = 0;
+      let losses = 0;
+      let netEth = 0;
+
+      for (const tx of trades) {
+        const net = estimateTradeNetEth(wallet, tx, internalByHash[tx.hash] || []);
+        netEth += net;
+        if (net > 0) wins++; else losses++;
+      }
+
+      const tradeCount = trades.length;
+      const successRate = tradeCount ? (wins / tradeCount) * 100 : 0;
+      const netComponent = Math.max(-20, Math.min(20, netEth * 8));
+      const score = tradeCount ? Math.max(0, Math.min(100, (successRate * 0.8) + 20 + netComponent)) : 0;
+
+      return {
+        wallet,
+        tradeCount,
+        wins,
+        losses,
+        successRate,
+        netEth,
+        score
+      };
+    }
+
+    function isPotentialTrade(wallet, tx) {
+      const to = (tx.to || '').toLowerCase();
+      const from = (tx.from || '').toLowerCase();
+      const input = (tx.input || '').toLowerCase();
+      if (from !== wallet.toLowerCase()) return false;
+      if (tx.isError === '1') return false;
+
+      const methodHit = swapMethodPrefixes.some(prefix => input.startsWith(prefix));
+      return knownDexRouters.has(to) || methodHit;
+    }
+
+    function estimateTradeNetEth(wallet, tx, internalTxs) {
+      const wei = BigInt(tx.value || '0');
+      const gasUsed = BigInt(tx.gasUsed || '0');
+      const gasPrice = BigInt(tx.gasPrice || '0');
+      const gasFee = gasUsed * gasPrice;
+
+      let internalIn = 0n;
+      let internalOut = 0n;
+      const wl = wallet.toLowerCase();
+
+      for (const itx of internalTxs) {
+        if ((itx.to || '').toLowerCase() === wl) internalIn += BigInt(itx.value || '0');
+        if ((itx.from || '').toLowerCase() === wl) internalOut += BigInt(itx.value || '0');
+      }
+
+      const netWei = internalIn - internalOut - wei - gasFee;
+      return Number(netWei) / 1e18;
+    }
+
+    function buildRow(row) {
+      const tr = document.createElement('tr');
+      tr.className = 'hover:bg-slate-800/30';
+
+      if (row.error) {
+        tr.innerHTML = `
+          <td class="py-3 pr-4 font-mono text-xs">${short(row.wallet)}</td>
+          <td colspan="6" class="text-red-300 text-right py-3">Error: ${escapeHtml(row.error)}</td>
+        `;
+        return tr;
+      }
+
+      const badge = row.score >= 75 ? 'bg-emerald-500/20 text-emerald-300' : row.score >= 50 ? 'bg-amber-500/20 text-amber-300' : 'bg-rose-500/20 text-rose-300';
+      tr.innerHTML = `
+        <td class="py-3 pr-4 font-mono text-xs">${short(row.wallet)}</td>
+        <td class="text-right py-3 px-2">${row.tradeCount}</td>
+        <td class="text-right py-3 px-2 text-emerald-300">${row.wins}</td>
+        <td class="text-right py-3 px-2 text-rose-300">${row.losses}</td>
+        <td class="text-right py-3 px-2">${row.successRate.toFixed(1)}%</td>
+        <td class="text-right py-3 px-2 ${row.netEth >= 0 ? 'text-emerald-300' : 'text-rose-300'}">${row.netEth.toFixed(4)}</td>
+        <td class="text-right py-3 pl-4"><span class="px-2 py-1 rounded ${badge}">${row.score.toFixed(1)}</span></td>
+      `;
+      return tr;
+    }
+
+    function short(address) {
+      if (!address || address.length < 12) return address;
+      return `${address.slice(0, 8)}...${address.slice(-6)}`;
+    }
+
+    function escapeHtml(text) {
+      return text
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#39;');
+    }
   </script>
 </body>
 </html>
