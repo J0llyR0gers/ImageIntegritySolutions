@@ -247,7 +247,7 @@
       <div class="lg:col-span-2 space-y-4">
         <h2 class="text-3xl font-bold tracking-tight">About Image Integrity Solutions</h2>
         <p class="text-slate-700 text-lg">
-          I’m <strong>Rob Rogers</strong>, and I help candidates present a credible story and run a disciplined search. The focus is practical tools, clear messaging, and a steady weekly rhythm that creates momentum.
+          I help candidates present a credible story and run a disciplined search. The focus is practical tools, clear messaging, and a steady weekly rhythm that creates momentum.
         </p>
         <ul class="grid sm:grid-cols-2 gap-3 text-slate-700">
           <li class="flex items-center gap-2"><i data-lucide="shield-check" class="w-4 h-4 text-brand-600"></i> Pragmatic guidance that respects your time</li>
@@ -261,10 +261,7 @@
       <div class="card p-6">
         <h3 class="font-semibold mb-4">Quick facts</h3>
         <dl class="grid grid-cols-1 sm:grid-cols-2 gap-y-3 text-sm text-slate-700">
-          <dt class="text-slate-500">Who I am</dt>
-          <dd class="font-medium">Rob Rogers — Career Transition Consultant</dd>
-
-          <dt class="text-slate-500">What I do</dt>
+          <dt class="text-slate-500">What we do</dt>
           <dd class="font-medium">Career transition support and strategy</dd>
 
           <dt class="text-slate-500">Ideal clients</dt>
@@ -289,25 +286,6 @@
           <p class="text-slate-700 mt-3 max-w-xl">
             Tell me a bit about your goals. I will reply with times and a short checklist so we can make the most of the call.
           </p>
-          <div class="mt-6 space-y-3 text-sm text-slate-700">
-            <div class="flex items-center gap-2">
-              <i data-lucide="mail" class="w-4 h-4 text-brand-600"></i>
-              <a href="mailto:robert.rogers@imageintegritysolutions.com" class="hover:underline">
-                robert.rogers@imageintegritysolutions.com
-              </a>
-            </div>
-            <div class="flex items-center gap-2">
-              <i data-lucide="phone" class="w-4 h-4 text-brand-600"></i>
-              <a href="tel:16124040137" class="hover:underline">
-                (612) 404-0137
-              </a>
-            </div>
-          </div>
-
-          <div class="mt-8">
-            <img src="images/RR2025.png" alt="Robert Rogers - Image Integrity Solutions LLC"
-                 class="rounded-2xl shadow-lg w-64 border">
-          </div>
         </div>
 
         <!-- FORM: Formspree -->
@@ -390,11 +368,11 @@
         } else {
           const data = await res.json().catch(() => ({}));
           const msg = (data && data.error) || (data && data.errors && data.errors[0] && data.errors[0].message);
-          note.textContent = msg || 'Hmm, something went wrong. Please email robert.rogers@imageintegritysolutions.com.';
+          note.textContent = msg || 'Hmm, something went wrong. Please try again later.';
           note.className = 'text-red-700 text-sm mt-2';
         }
       } catch {
-        note.textContent = 'Network error. Please email robert.rogers@imageintegritysolutions.com.';
+        note.textContent = 'Network error. Please try again later.';
         note.className = 'text-red-700 text-sm mt-2';
       }
     });
